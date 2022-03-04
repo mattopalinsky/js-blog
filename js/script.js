@@ -1,4 +1,6 @@
+{
 'use strict';
+
 
 function titleClickHandler(event){
   event.preventDefault();
@@ -51,7 +53,8 @@ function generateTitleLinks(){
 
   /* remove contents of titleList */
 
-  const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+  const titleList = document.querySelector(optTitleListSelector);
+   titleList.innerHTML = '';
 
   /* for each article */
 
@@ -67,7 +70,7 @@ function generateTitleLinks(){
 
     /* find the title element and get the tittle form the tittle element */
 
-    const articleTitle = article.quetrySelector(optTitleSelector).innerHTML;
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* create HTML of the link */
 
@@ -91,3 +94,4 @@ function generateTitleLinks(){
   }
 
 generateTitleLinks();
+}
