@@ -10,7 +10,7 @@ function titleClickHandler(event){
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
-   for(let activeLink of activeLinks){
+   for (let activeLink of activeLinks){
    activeLink.classList.remove('active');
 }
 
@@ -22,7 +22,7 @@ function titleClickHandler(event){
 
   const activeArticles = document.querySelectorAll('.post');
 
-   for(let activeArticle of activeArticles){
+   for (let activeArticle of activeArticles){
    activeArticle.classList.remove('active');
 }
 
@@ -56,7 +56,7 @@ function generateTitleLinks(customSelector = ''){
 
   let html = '';
 
-   for(let article of articles) {
+   for (let article of articles) {
 
     /* get the article id */
 
@@ -80,7 +80,7 @@ function generateTitleLinks(customSelector = ''){
 
    const links = document.querySelectorAll('.titles a');
 
-   for(let link of links){
+   for (let link of links){
     link.addEventListener('click', titleClickHandler);
    }
 
@@ -247,7 +247,7 @@ function generateAuthors(){
 
     /*find authors wrapper */
 
-    const authorWrapper = article.querySelector(optArticleAuthorSelector);
+    const authorWrapper = article.querySelectorAll(optArticleAuthorSelector);
 
     /* make html variable with empty string */
 
@@ -260,7 +260,7 @@ function generateAuthors(){
 
     /* generate HTML of the link */
 
-    const authorLinkHtml = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+    const authorLinkHtml = '<p class="post-author">' + articleAuthor + '</p>';
     console.log(authorLinkHtml);
 
     /* add generated code to html variable */
@@ -302,7 +302,7 @@ function authorClickHandler(event){
 
   /* START LOOP: for each active authors link */
 
-  for(let authorLink of authorLinks) {
+  for (let authorLink of authorLinks) {
 
     /* remove class active */
 
@@ -317,7 +317,7 @@ function authorClickHandler(event){
 
   /* START LOOP: for each found authors link */
 
-  for(let authorLinkHref of authorLinksHref){
+  for (let authorLinkHref of authorLinksHref){
 
     /* add class active */
 
